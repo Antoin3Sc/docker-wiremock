@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/world"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "hello": {
+        "world": " !"
+      }
+    }
+  }
+}

@@ -1,6 +1,2 @@
-files/*
-!files/hello.txt
-mappings/*
-!mappings/hello.json
 .idea
 .DS_Store

@@ -19,18 +19,24 @@ Start a server with our simple `Hello World` example mapping
 
 ```bash
 # get the hello world assets
-git clone https://github.com/ekino/docker-wiremock.git
-cd docker-wiremock
+git clone https://github.com/Antoin3Sc/docker-wiremock.git
 
 # start the server
+cd docker-wiremock
 docker run -d \
-  -p 80:8080 \
-  -v $(readlink -f files):/wiremock/__files \
-  -v $(readlink -f mappings):/wiremock/mappings \
+  -p 8181:8080 \
+  -v $(pwd)/files:/wiremock/__files \
+  -v $(pwd)/mappings:/wiremock/mappings \
   ekino/wiremock
 
 # use it
 curl http://127.0.0.1/hello
+
+# reload mapping
+curl -XPOST http://127.0.0.1:8181/__admin/mappings/reset
+
+# get all mapping
+curl http://127.0.0.1:8181/__admin
 ```
 
 [travis-image]: https://img.shields.io/travis/ekino/docker-wiremock.svg?style=flat-square
